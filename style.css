@@ -1,0 +1,341 @@
+/* ========================================
+   色やサイズは、まずここを直すと全体が変わります
+   ======================================== */
+:root {
+  --color-bg: #f6f1e6;          /* ページ全体の背景（ロゴに近いクリーム） */
+  --color-surface: #fffdf8;     /* 白いカードの色 */
+  --color-text: #1c2b28;        /* 本文の文字色 */
+  --color-muted: #5b6b67;       /* 補足の文字色 */
+  --color-teal: #2f7d72;        /* インコの体に近い緑 */
+  --color-teal-dark: #1b4a44;   /* ヘッダーなど濃い緑 */
+  --color-line: #06c755;        /* LINE公式に近い緑 */
+  --color-line-hover: #05b34c;
+  --header-height: 64px;
+  --radius: 16px;
+  --shadow: 0 12px 30px rgba(27, 74, 68, 0.12);
+}
+
+/* どのブラウザでも余白の基準をそろえる */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-teal-dark);
+  color: #fff;
+}
+
+.site-header__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  min-height: var(--header-height);
+  padding: 12px 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-header__name {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.site-header__job {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+}
+
+/* ---------- メインビジュアル（左の現場写真） ---------- */
+.hero {
+  position: relative;
+  min-height: 52vh;
+  overflow: hidden;
+  background: #203330;
+}
+
+.hero__image {
+  width: 100%;
+  height: 52vh;
+  min-height: 280px;
+  object-fit: cover;
+  object-position: 70% center; /* 人が中央〜右寄りに見える位置 */
+}
+
+.hero__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 20px 32px;
+  background: linear-gradient(to top, rgba(16, 32, 30, 0.82), rgba(16, 32, 30, 0.08));
+  color: #fff;
+}
+
+.hero__eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.hero__lead {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+}
+
+/* ---------- 中央：左にロゴ、右に情報 ---------- */
+.about {
+  padding: 32px 16px 16px;
+}
+
+.about__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr; /* スマホは1列。下がロゴ→情報の順 */
+}
+
+.about__logo {
+  background: #f3ead6;
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__logo img {
+  width: min(100%, 360px);
+  border-radius: 12px;
+}
+
+.about__info {
+  padding: 28px 22px 32px;
+}
+
+.about__label {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--color-teal);
+  font-weight: 700;
+}
+
+.about__name {
+  margin: 4px 0 18px;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  letter-spacing: 0.04em;
+}
+
+.about__facts {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  border-top: 1px solid #e6ddd0;
+  border-bottom: 1px solid #e6ddd0;
+}
+
+.about__facts li {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #efe7da;
+}
+
+.about__facts li:last-child {
+  border-bottom: none;
+}
+
+.about__fact-label {
+  flex: 0 0 3.2em;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.about__fact-value {
+  font-weight: 600;
+}
+
+.about__text {
+  margin: 0 0 18px;
+  color: #31443f;
+}
+
+.about__works {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.about__works li {
+  background: #e7f3f0;
+  color: var(--color-teal-dark);
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.about__note {
+  margin: 10px 0 0;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* ---------- LINEボタン ---------- */
+.line-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  background: var(--color-line);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 999px;
+  box-shadow: 0 8px 16px rgba(6, 199, 85, 0.25);
+}
+
+.line-btn:hover,
+.line-btn:focus-visible {
+  background: var(--color-line-hover);
+}
+
+.line-btn--large {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* ---------- お問い合わせ帯 ---------- */
+.contact {
+  padding: 16px 16px 40px;
+}
+
+.contact__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: var(--color-teal-dark);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px;
+  border-radius: var(--radius);
+}
+
+.contact__title {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+}
+
+.contact__text {
+  margin: 0 0 20px;
+  opacity: 0.9;
+}
+
+/* ---------- フッター ---------- */
+.site-footer {
+  padding: 24px 16px 40px;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.site-footer__name {
+  margin: 0;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--color-teal-dark);
+}
+
+.site-footer__copy {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+}
+
+/* ========================================
+   タブレット〜パソコン：左右2列にする
+   左＝ロゴ、右＝情報
+   ======================================== */
+@media (min-width: 768px) {
+  .hero {
+    min-height: 68vh;
+  }
+
+  .hero__image {
+    height: 68vh;
+  }
+
+  .hero__overlay {
+    padding: 48px 56px;
+  }
+
+  .about {
+    padding: 48px 24px 24px;
+  }
+
+  .about__inner {
+    grid-template-columns: minmax(280px, 42%) 1fr; /* 左にロゴ、右に情報 */
+    align-items: stretch;
+  }
+
+  .about__logo {
+    padding: 40px 32px;
+  }
+
+  .about__info {
+    padding: 44px 48px;
+  }
+
+  .contact {
+    padding: 24px 24px 56px;
+  }
+
+  .contact__inner {
+    padding: 48px 24px;
+  }
+}

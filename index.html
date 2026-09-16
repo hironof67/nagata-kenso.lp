@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAGATA.KENSO｜塗装業</title>
+  <meta name="description" content="NAGATA.KENSOは塗装業の個人事業主です。お問い合わせはLINEまで。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--
+    ========================================
+    編集しやすいポイント（ここを見れば大体直せます）
+    ========================================
+    1. 屋号・キャッチコピー
+       → 下の header と hero の文字を書き換える
+    2. LINEのリンク
+       → 「LINE_URL_HERE」を自分のLINE公式アカウントURLに変える
+    3. 紹介文・対応内容
+       → main の中の文章を書き換える
+    4. 色や余白
+       → style.css の一番上「:root」を変える
+    5. 画像
+       → images/hero-painter.png（現場写真）
+       → images/logo-nagata-kenso.jpg（インコのロゴ）
+  -->
+
+  <!-- 画面上部の細いバー。屋号をすぐ見える位置に置いています -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-header__name">NAGATA.KENSO</p>
+      <p class="site-header__job">塗装業</p>
+    </div>
+  </header>
+
+  <!-- 左の画像（現場写真）を大きく使ったメインビジュアル -->
+  <section class="hero" aria-label="メインビジュアル">
+    <img
+      class="hero__image"
+      src="images/hero-painter.png"
+      alt="白い壁をローラーで塗装している作業の様子"
+    >
+    <div class="hero__overlay">
+      <p class="hero__eyebrow">Painting Works</p>
+      <h1 class="hero__title">NAGATA.KENSO</h1>
+      <p class="hero__lead">塗装業　／　個人事業主</p>
+    </div>
+  </section>
+
+  <!--
+    中央エリア
+    左：右の画像（インコのロゴ）
+    右：屋号・事業内容・問い合わせ案内
+  -->
+  <main class="about">
+    <div class="about__inner">
+
+      <div class="about__logo">
+        <img
+          src="images/logo-nagata-kenso.jpg"
+          alt="インコが絵筆をくわえた NAGATA KENSO のロゴ"
+        >
+      </div>
+
+      <div class="about__info">
+        <p class="about__label">屋号</p>
+        <h2 class="about__name">NAGATA.KENSO</h2>
+
+        <ul class="about__facts">
+          <li>
+            <span class="about__fact-label">業種</span>
+            <span class="about__fact-value">塗装業</span>
+          </li>
+          <li>
+            <span class="about__fact-label">形態</span>
+            <span class="about__fact-value">個人事業主</span>
+          </li>
+          <li>
+            <span class="about__fact-label">連絡</span>
+            <span class="about__fact-value">お問い合わせはLINEまで</span>
+          </li>
+        </ul>
+
+        <p class="about__text">
+          外壁や内装の塗装を、一件ずつ丁寧に仕上げます。<br>
+          小さな補修から塗り替えまで、まずはお気軽にご相談ください。
+        </p>
+
+        <!-- 対応内容。いらない行は消すだけでOKです -->
+        <ul class="about__works">
+          <li>外壁塗装</li>
+          <li>内装塗装</li>
+          <li>鉄部・木部塗装</li>
+          <li>補修・塗り替え</li>
+        </ul>
+
+        <!--
+          ▼ LINEのURLをあとで入れてください
+          例）https://line.me/R/ti/p/@your-id
+        -->
+        <a
+          class="line-btn"
+          href="LINE_URL_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LINEで問い合わせる
+        </a>
+        <p class="about__note">※ リンク先は、あとから自分のLINE URLに差し替えてください</p>
+      </div>
+
+    </div>
+  </main>
+
+  <section class="contact" aria-label="お問い合わせ">
+    <div class="contact__inner">
+      <h2 class="contact__title">お問い合わせ</h2>
+      <p class="contact__text">ご相談・お見積りはLINEからどうぞ。</p>
+      <a
+        class="line-btn line-btn--large"
+        href="LINE_URL_HERE"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LINEで問い合わせる
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p class="site-footer__name">NAGATA.KENSO</p>
+    <p class="site-footer__copy">&copy; NAGATA.KENSO</p>
+  </footer>
+
+</body>
+</html>
